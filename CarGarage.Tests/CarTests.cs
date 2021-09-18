@@ -5,33 +5,40 @@ namespace CarGarage.Tests
 {
     public class CarTests
     {
-        Car car;
+        Car car; // null
+        // space reserved but not populated
 
         public CarTests()
         {
-            car = new Car();
+            car = new Car();  // instantiation, blank car, aka default attribute only 
+
+
         }
 
         [Fact]
-        public void SetMake_Assigns_Make_of_Car()
+        public void SetMake_Assigns_Make_of_Car() // returns nothing(void)
         {
-            car.Make = "";
+            // arrange
+            car.Make = "Honda";
 
             // Add a SetMake method to the Car class that assigns the Make property to the value passed into the method
             // Uncomment the line below:
-            // car.SetMake("Honda");
+           
+            // act
+            car.SetMake("Honda");
 
+            // assertion
             Assert.Equal("Honda", car.Make);
         }
 
         [Fact]
         public void SetModel_Assigns_Model_of_Car()
         {
-            car.Model = "";
+            car.Model = "Accord";
 
             // Add a SetModel method to the Car class that assigns the Model property to the value passed into the method
             // Uncomment the line below:
-            // car.SetModel("Accord");
+             car.SetModel("Accord");
 
             Assert.Equal("Accord", car.Model);
         }
@@ -43,7 +50,7 @@ namespace CarGarage.Tests
 
             // Add a GetSpeed method to the Car class that returns the value of the Speed property
             // Uncomment the line below:
-            // Assert.Equal(27, car.GetSpeed());
+             Assert.Equal(27, car.GetSpeed());
         }
 
         [Fact]
@@ -53,7 +60,7 @@ namespace CarGarage.Tests
 
             // Add an IsSpeeding method to the Car class that returns true if the Speed property is greater than 70
             // Uncomment the line below:
-            // Assert.True(car.IsSpeeding());
+            Assert.True(car.IsSpeeding());
         }
 
         [Fact]
@@ -63,7 +70,7 @@ namespace CarGarage.Tests
 
             // Add an Accelerate method to the Car class that increases Speed by 10 mph
             // Uncomment the line below:
-            // car.Accelerate();
+            car.Accelerate();
 
             Assert.Equal(10, car.Speed);
         }
@@ -75,7 +82,7 @@ namespace CarGarage.Tests
 
             // Modify the Accelerate method so that the car's Speed can never exceed 100 mph
             // Uncomment the line below:
-            // car.Accelerate();
+             car.Accelerate();
 
             Assert.Equal(100, car.Speed);
         }
@@ -89,7 +96,7 @@ namespace CarGarage.Tests
             // Modify the Accelerate method so that the car's Speed increases by 20mph, but only if the
             // Make is "Ferrari"
             // Uncomment the line below:
-            // car.Accelerate();
+            car.Accelerate();
 
             Assert.Equal(20, car.Speed);
         }
@@ -101,7 +108,7 @@ namespace CarGarage.Tests
 
             // Add a Brake method to the Car class that decreases Speed by 7 mph
             // Uncomment the line below:
-            // car.Brake();
+            car.Brake();
 
             Assert.Equal(3, car.Speed);
         }
@@ -113,7 +120,7 @@ namespace CarGarage.Tests
 
             // Modify the Brake method so that the car's Speed can never go below 0 mph
             // Uncomment the line below:
-            // car.Brake();
+            car.Brake();
 
             Assert.Equal(0, car.Speed);
         }
@@ -126,7 +133,7 @@ namespace CarGarage.Tests
 
             // Modify the Brake method so that the car's Speed is decreased by half if AutoBrakeActive property is true
             // Uncomment the line below:
-            // car.Brake();
+            car.Brake();
 
             Assert.Equal(25, car.Speed);
         }
